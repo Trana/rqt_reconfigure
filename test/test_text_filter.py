@@ -30,7 +30,7 @@
 
 import unittest
 
-from python_qt_binding.QtCore import QRegExp, Qt
+from python_qt_binding.QtCore import QRegularExpression, Qt
 
 from rqt_reconfigure.text_filter import TextFilter
 
@@ -42,9 +42,9 @@ class MyTest(unittest.TestCase):
     def setUp(self):
         unittest.TestCase.setUp(self)
 
-        syntax_nr = QRegExp.RegExp
-        syntax = QRegExp.PatternSyntax(syntax_nr)
-        self._regExp = QRegExp(self._query_text, Qt.CaseInsensitive, syntax)
+        syntax_nr = QRegularExpression.RegExp
+        syntax = QRegularExpression.PatternSyntax(syntax_nr)
+        self._regExp = QRegularExpression(self._query_text, Qt.CaseInsensitive, syntax)
 
         self._filter = TextFilter(self._regExp)
         self._filter.set_text(self._query_text)

@@ -28,7 +28,7 @@
 #
 # Author: Isaac Saito
 
-from python_qt_binding.QtCore import QRegExp, Qt
+from python_qt_binding.QtCore import QRegularExpression, Qt
 
 from rqt_console.filters.message_filter import MessageFilter
 
@@ -79,9 +79,9 @@ class TextFilter(MessageFilter):
         """
         super(TextFilter, self).set_text(text)
 
-        syntax_nr = QRegExp.RegExp
-        syntax = QRegExp.PatternSyntax(syntax_nr)
-        self.regex = QRegExp(text, Qt.CaseInsensitive, syntax)
+        syntax_nr = QRegularExpression.RegExp
+        syntax = QRegularExpression.PatternSyntax(syntax_nr)
+        self.regex = QRegularExpression(text, Qt.CaseInsensitive, syntax)
         self.set_regex(self.regex)
 
     def get_text(self):
